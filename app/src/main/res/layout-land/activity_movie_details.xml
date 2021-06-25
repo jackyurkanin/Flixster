@@ -47,8 +47,8 @@
 
     <ImageView
         android:id="@+id/trImage"
-        android:layout_width="294dp"
-        android:layout_height="113dp"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
