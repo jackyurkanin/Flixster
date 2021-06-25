@@ -55,5 +55,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
+        android:foreground="@android:drawable/ic_media_play"
+        android:foregroundGravity="center"
         app:srcCompat="@drawable/flicks_movie_placeholder" />
 </RelativeLayout>
