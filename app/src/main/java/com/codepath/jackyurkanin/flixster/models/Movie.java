@@ -17,6 +17,7 @@ public class Movie {
     String title;
     String overview;
     Double voteAverage;
+    Integer id;
 
     public Movie(JSONObject jsonObject) throws JSONException {
         backdropPath = jsonObject.getString("backdrop_path");
@@ -24,6 +25,7 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         voteAverage = jsonObject.getDouble("vote_average");
+        id = jsonObject.getInt("id");
     }
     public Movie() {}
 //    function below sorts the movies out of the json array from the api into java
@@ -52,5 +54,9 @@ public class Movie {
 
     public String getOverview() {
         return overview;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }
