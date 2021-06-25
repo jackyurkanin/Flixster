@@ -27,14 +27,14 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 import okhttp3.Headers;
 
 public class MovieDetailsActivity extends AppCompatActivity {
-
+    // make variables
     public static final String YT_URL = MainActivity.BASE_URL + "/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     public static final String TAG = "MovieDetailsActivity";
     // the movie to display
     Movie movie;
     Context context;
 
-    // the view objects
+    // the view objects & variables
     TextView tvTitle;
     TextView tvOverview;
     RatingBar rbVoteAverage;
@@ -51,6 +51,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         tvOverview = findViewById(R.id.tvOverview);
         rbVoteAverage = findViewById(R.id.rbVoteAverage);
         trImage = findViewById(R.id.trImage);
+
+        // make on click event from the detail image that brings up trailer and passes video id
         trImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +62,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
             }
         });
 
-        // unwrap the movie passed in via intent, using its simple name as a key
+        // unwrap the movie passed in via intent, using its simple name as a key then populate
         movie = Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
@@ -84,6 +86,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         float voteAverage = movie.getVoteAverage().floatValue();
         rbVoteAverage.setRating(voteAverage / 2.0f);
 
+
+        // make async API request and get video key
         String reqUrl = String.format(YT_URL, movie.id);
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(reqUrl, new JsonHttpResponseHandler() {

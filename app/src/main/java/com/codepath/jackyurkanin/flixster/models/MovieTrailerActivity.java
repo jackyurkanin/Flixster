@@ -21,13 +21,13 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_trailer);
 
-        // temporary test video id -- TODO replace with movie trailer video id
+        // get video id name through intent extra
         final String videoId = getIntent().getStringExtra("vidID");
 
         // resolve the player view from the layout
         YouTubePlayerView playerView = findViewById(R.id.player);
 
-        // initialize with API key stored in secrets.xml
+        // initialize with API key
         playerView.initialize("AIzaSyCWiRwm9MkkuoUFmRDBcOqm7cxpnBxTQZQ", new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider,

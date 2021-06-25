@@ -33,7 +33,7 @@ public class Movie {
         id = jsonObject.getInt("id");
     }
     public Movie() {}
-//    function below sorts the movies out of the json array from the api into java
+//    function below sorts the movies out of the json array from the api into java list of movies
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
         List<Movie> movies = new ArrayList<>();
         for (int i=0; i < movieJsonArray.length(); i++) {
@@ -41,6 +41,9 @@ public class Movie {
         }
         return movies;
     }
+
+
+    // implemented getter functions
     public String getBackdropPath() {
         return String.format("https://image.tmdb.org/t/p/w342/%s", backdropPath);
     }

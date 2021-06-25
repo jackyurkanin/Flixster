@@ -37,7 +37,6 @@ import com.bumptech.glide.module.AppGlideModule;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
-
     Context context;
     List<Movie> movies;
 
@@ -65,11 +64,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
+        // setting views
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
 
+
+        // populating
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvTitle);
